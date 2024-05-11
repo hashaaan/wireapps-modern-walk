@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import ProductCard from "./_components/product-card";
-import { api } from "./_lib/api";
-import type { Product } from "./types";
-import { MENS_CLOTHING, WOMS_CLOTHING } from "./_lib/constants";
-import CategoryCard from "./_components/category-card";
+import ProductCard from "@/_components/product-card";
+import { api } from "@/_lib/api";
+import type { Product } from "@/types";
+import { MENS_CLOTHING, WOMS_CLOTHING } from "@/_lib/constants";
+import CategoryCard from "@/_components/category-card";
 
 export const metadata: Metadata = {
   title: "Modern Walk | Home",
@@ -16,8 +16,6 @@ const Home = async () => {
       searchParams: { limit: "4" },
     })
     .json<Product[]>();
-
-  // console.log(flashSaleProducts);
 
   return (
     <div className="container px-4 md:px-0 py-14 space-y-14">

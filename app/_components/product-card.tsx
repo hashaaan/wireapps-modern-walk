@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { cn } from "../_lib/utils";
-import type { Product } from "../types";
-import { MENS_CLOTHING, WOMS_CLOTHING } from "../_lib/constants";
+import { cn } from "@/_lib/utils";
+import type { Product } from "@/types";
+import { MENS_CLOTHING, WOMS_CLOTHING } from "@/_lib/constants";
 
 type ProductCardProps = {
   product: Product;

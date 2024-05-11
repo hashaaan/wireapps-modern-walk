@@ -1,10 +1,10 @@
-import { api } from "../../_lib/api";
-import { MENS_CLOTHING, WOMS_CLOTHING } from "../../_lib/constants";
-import ProductCard from "../../_components/product-card";
-import type { Product } from "../../types";
+import { api } from "@/_lib/api";
+import { MENS_CLOTHING, WOMS_CLOTHING } from "@/_lib/constants";
+import ProductCard from "@/_components/product-card";
+import type { Product } from "@/types";
 import ProductsNotAvailableCard from "./products-not-available-card";
 import type { Metadata } from "next";
-import { capitalizeWords } from "@/app/_lib/utils";
+import { capitalizeWords } from "@/_lib/utils";
 
 const MENS_CLOTHING_SLUG = "mens-clothing";
 const WOMS_CLOTHING_SLUG = "womens-clothing";

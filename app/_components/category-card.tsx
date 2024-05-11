@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { cn } from "../_lib/utils";
+import { cn } from "@/_lib/utils";
 
 type CategoryCardProps = {
   category: string;
