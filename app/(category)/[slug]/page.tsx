@@ -2,11 +2,23 @@ import { api } from "../../_lib/api";
 import { MENS_CLOTHING, WOMS_CLOTHING } from "../../_lib/constants";
 import ProductCard from "../../_components/product-card";
 import type { Product } from "../../types";
-import Link from "next/link";
 import ProductsNotAvailableCard from "./products-not-available-card";
+import type { Metadata } from "next";
+import { capitalizeWords } from "@/app/_lib/utils";
 
 const MENS_CLOTHING_SLUG = "mens-clothing";
 const WOMS_CLOTHING_SLUG = "womens-clothing";
+
+const getCategoryBySlug = (slug: string) => {
+  switch (slug) {
+    case MENS_CLOTHING_SLUG:
+      return MENS_CLOTHING;
+    case WOMS_CLOTHING_SLUG:
+      return WOMS_CLOTHING;
+    default:
+      return undefined;
+  }
+};
 
 type CategoryPageProps = {
   params: {
@@ -14,18 +26,18 @@ type CategoryPageProps = {
   };
 };
 
-const CategoryPage = async ({ params: { slug } }: CategoryPageProps) => {
-  const getCategoryBySlug = (slug: string) => {
-    switch (slug) {
-      case MENS_CLOTHING_SLUG:
-        return MENS_CLOTHING;
-      case WOMS_CLOTHING_SLUG:
-        return WOMS_CLOTHING;
-      default:
-        return undefined;
-    }
+export const generateMetadata = async ({
+  params: { slug },
+}: CategoryPageProps): Promise<Metadata> => {
+  return {
+    title: `Modern Walk | ${capitalizeWords(
+      getCategoryBySlug(slug) ?? slug.replace("-", " ")
+    )}`,
+    description: "The fashion retail store for the modern",
   };
+};
 
+const CategoryPage = async ({ params: { slug } }: CategoryPageProps) => {
   const categoryProducts = await api
     .get(`products/category/${getCategoryBySlug(slug)}`, {
       searchParams: { limit: "8" },
