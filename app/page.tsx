@@ -11,19 +11,21 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
+  // TODO: Cannot get the random products
+  // api only returns products related to the category
   const flashSaleProducts = await api
     .get(`products/category/${MENS_CLOTHING}`, {
-      searchParams: { limit: "4" },
+      searchParams: { limit: "6" },
     })
     .json<Product[]>();
 
   return (
-    <div className="container px-4 md:px-0 py-14 space-y-14">
+    <div className="container px-4 md:px-0 py-14 space-y-12">
       {/* Flash Sale section */}
       <section className="space-y-10">
         <h2 className="text-3xl font-bold">Flash Sale</h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        <div className="flex flex-row gap-10 overflow-x-scroll no-scrollbar pb-8">
           {flashSaleProducts?.length > 0 &&
             flashSaleProducts.map((item) => (
               <ProductCard key={item.id} product={item} />
@@ -38,12 +40,12 @@ const Home = async () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <CategoryCard
             category="Men's Clothing"
-            className="bg-[#2BD9AF]"
+            className="bg-mw-green"
             href="/mens-clothing"
           />
           <CategoryCard
             category="Women's Clothing"
-            className="bg-[#FF5E84]"
+            className="bg-mw-pink"
             href="/womens-clothing"
           />
         </div>

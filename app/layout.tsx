@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <main className="flex flex-col items-center min-h-screen bg-[#F5F5F5]">
+        <main className="flex flex-col items-center min-h-screen bg-mw-gray-100">
           <Header title="Modern Walk" />
 
           {children}

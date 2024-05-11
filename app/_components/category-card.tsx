@@ -16,11 +16,11 @@ const CategoryCard = ({
     <Link
       href={href}
       className={cn(
-        "flex justify-center items-center h-80 bg-[#2BD9AF] rounded-3xl shadow-xl px-4 py-6",
+        "flex justify-center items-center h-80 rounded-3xl shadow-xl px-4 py-6",
         className
       )}
     >
-      <div className="text-white text-5xl font-bold">{category}</div>
+      <div className="text-5xl font-bold text-white">{category}</div>
     </Link>
   );
 };

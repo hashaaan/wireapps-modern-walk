@@ -11,9 +11,9 @@ const ProductCard = ({ product }: ProductCardProps) => {
   const getCardBgColor = (category: string) => {
     switch (category) {
       case MENS_CLOTHING:
-        return "bg-[#2BD9AF]";
+        return "bg-mw-green";
       case WOMS_CLOTHING:
-        return "bg-[#FF5E84]";
+        return "bg-mw-pink";
       default:
         return "bg-gray-500";
     }
@@ -22,7 +22,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <div
       key={product.id}
-      className="h-96 bg-white rounded-3xl shadow-xl flex flex-col"
+      className="h-96 w-72 bg-white rounded-3xl shadow-xl flex flex-col"
     >
       <div className="h-60 flex flex-col flex-1 px-6 py-4 font-bold text-center gap-2">
         <h6 className="text-lg whitespace-nowrap truncate">{product.title}</h6>
@@ -44,9 +44,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
           getCardBgColor(product.category)
         )}
       >
-        <div className="text-[#0E42FD] font-bold text-xl">
-          Rs {product.price}
-        </div>
+        <div className="text-mw-blue font-bold text-xl">Rs {product.price}</div>
         <div className="text-wrap text-sm max-w-48 line-clamp-4">
           {product.description}
         </div>
