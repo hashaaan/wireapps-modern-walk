@@ -11,7 +11,7 @@ const ProductsNotAvailableCard = () => (
       className="text-blue-500 py-2 px-3 bg-white w-fit rounded-md mt-5"
       href="/"
     >
-      Go to home page
+      Return Home
     </Link>
   </div>
 );

@@ -41,12 +41,12 @@ const Home = async () => {
           <CategoryCard
             category="Men's Clothing"
             className="bg-mw-green"
-            href="/mens-clothing"
+            href="/category/mens-clothing"
           />
           <CategoryCard
             category="Women's Clothing"
             className="bg-mw-pink"
-            href="/womens-clothing"
+            href="/category/womens-clothing"
           />
         </div>
       </section>
