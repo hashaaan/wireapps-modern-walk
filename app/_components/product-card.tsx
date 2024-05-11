@@ -40,14 +40,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
 
       <div
         className={cn(
-          "flex flex-col items-center gap-1.5 h-36 py-4 px-6 rounded-3xl text-center",
+          "flex flex-col items-center gap-1 h-36 py-4 px-6 rounded-3xl text-center",
           getCardBgColor(product.category)
         )}
       >
         <div className="text-[#0E42FD] font-bold text-xl">
           Rs {product.price}
         </div>
-        <div className="text-wrap text-sm max-w-52 line-clamp-4">
+        <div className="text-wrap text-sm max-w-48 line-clamp-4">
           {product.description}
         </div>
       </div>

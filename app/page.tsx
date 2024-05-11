@@ -20,12 +20,12 @@ const Home = async () => {
   // console.log(flashSaleProducts);
 
   return (
-    <div className="container py-14 space-y-14">
+    <div className="container px-4 md:px-0 py-14 space-y-14">
       {/* Flash Sale section */}
       <section className="space-y-10">
         <h2 className="text-3xl font-bold">Flash Sale</h2>
 
-        <div className="grid grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
           {flashSaleProducts?.length > 0 &&
             flashSaleProducts.map((item) => (
               <ProductCard key={item.id} product={item} />
@@ -37,9 +37,17 @@ const Home = async () => {
       <section className="space-y-10">
         <h2 className="text-3xl font-bold">Categories</h2>
 
-        <div className="grid grid-cols-2 gap-10">
-          <CategoryCard category="Men's Clothing" className="bg-[#2BD9AF]" />
-          <CategoryCard category="Women's Clothing" className="bg-[#FF5E84]" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <CategoryCard
+            category="Men's Clothing"
+            className="bg-[#2BD9AF]"
+            href="/mens-clothing"
+          />
+          <CategoryCard
+            category="Women's Clothing"
+            className="bg-[#FF5E84]"
+            href="/womens-clothing"
+          />
         </div>
       </section>
     </div>
