@@ -11,21 +11,20 @@ export const metadata: Metadata = {
 };
 
 const Home = async () => {
-  // TODO: Cannot get the random products
-  // api only returns products related to the category
+  // TODO: Cannot get products exactly as in the figma design
   const flashSaleProducts = await api
-    .get(`products/category/${MENS_CLOTHING}`, {
-      searchParams: { limit: "6" },
+    .get(`products`, {
+      searchParams: { limit: "4", sort: "asc" },
     })
     .json<Product[]>();
 
   return (
-    <div className="container px-4 md:px-0 py-14 space-y-12">
+    <div className="container px-6 md:px-0 py-14 space-y-12">
       {/* Flash Sale section */}
       <section className="space-y-10">
         <h2 className="text-3xl font-bold">Flash Sale</h2>
 
-        <div className="flex flex-row gap-10 overflow-x-scroll no-scrollbar pb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-10">
           {flashSaleProducts?.length > 0 &&
             flashSaleProducts.map((item) => (
               <ProductCard key={item.id} product={item} />

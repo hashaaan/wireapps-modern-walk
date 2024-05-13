@@ -15,14 +15,14 @@ const ProductCard = ({ product }: ProductCardProps) => {
       case WOMS_CLOTHING:
         return "bg-mw-pink";
       default:
-        return "bg-gray-500";
+        return "bg-gray-300";
     }
   };
 
   return (
     <div
       key={product.id}
-      className="h-96 w-72 bg-white rounded-3xl shadow-xl flex flex-col"
+      className="h-96 bg-white rounded-3xl shadow-xl flex flex-col"
     >
       <div className="h-60 flex flex-col flex-1 px-6 py-4 font-bold text-center gap-2">
         <h6 className="text-lg whitespace-nowrap truncate">{product.title}</h6>

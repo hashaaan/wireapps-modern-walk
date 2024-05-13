@@ -20,7 +20,9 @@ const CategoryCard = ({
         className
       )}
     >
-      <div className="text-5xl font-bold text-white">{category}</div>
+      <div className="text-5xl font-bold text-white text-center">
+        {category}
+      </div>
     </Link>
   );
 };
