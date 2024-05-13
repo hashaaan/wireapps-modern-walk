@@ -36,4 +36,4 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 ### Deployment
 
-- https://wireapps-modern-walk-g0ubhg7xq-shalithas-projects-4f2d0871.vercel.app
+- https://wireapps-modern-walk.vercel.app/
