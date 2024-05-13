@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import ProductCard from "@/_components/product-card";
 import { api } from "@/_lib/api";
 import type { Product } from "@/types";
-import { MENS_CLOTHING, WOMS_CLOTHING } from "@/_lib/constants";
 import CategoryCard from "@/_components/category-card";
 
 export const metadata: Metadata = {
